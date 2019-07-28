@@ -1,7 +1,7 @@
 const currentDateUTC = new Date().toUTCString()
 
 module.exports = {
-	title: 'My New VuePress Blog',
+	title: 'Eternal Engineer',
 	dest: './public',
 	themeConfig: {
 		repo: 'https://wwww.github.com',
@@ -11,8 +11,7 @@ module.exports = {
 		nav: [
 			{ text: 'Home', link: '/' }, 
 			{ text: 'Blog', link: '/blog/' },
-			{ text: 'Archive', link: '/archive/' },
-			{ text: 'RSS Feed', link: '/rss.xml' }
+			{ text: 'Archive', link: '/archive/' }
 		],
 		logo: '/vuepress-blog-logo.png',
 		docsDir: 'src',
@@ -24,15 +23,6 @@ module.exports = {
 			'@vuepress/google-analytics',
 			{
 				ga: '' // UA-00000000-0
-			}
-		],
-		[
-			'vuepress-plugin-rss',
-			{
-				base_url: '/',
-				site_url: 'https://vuepressblog.org',
-				filter: frontmatter => frontmatter.date <= new Date(currentDateUTC),
-				count: 20
 			}
 		],
 		'vuepress-plugin-reading-time',
