@@ -10,6 +10,4 @@ tags:
     - JavaScript
 ---
 
-## Hello Dr. Saxena
-
-Dr. Zoidberg, that doesn't make sense. But, okay! No! The kind with looting and maybe starting a few fires! Well, then good news! It's a suppository. Hey, guess what you're accessories to. Hey, guess what you're accessories to.
+## Hello World

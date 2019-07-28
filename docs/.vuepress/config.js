@@ -103,7 +103,7 @@ module.exports = {
 				rel: 'icon',
 				type: 'image/png',
 				sizes: '32x32',
-				href: '/favicon-32x32.png'
+				href: '/ee_50_percent.png'
 			}
 		],
 		[
@@ -112,7 +112,7 @@ module.exports = {
 				rel: 'icon',
 				type: 'image/png',
 				sizes: '96x96',
-				href: '/favicon-96x96.png'
+				href: '/ee_50_percent.png'
 			}
 		],
 		[
