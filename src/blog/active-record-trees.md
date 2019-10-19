@@ -1,3 +1,17 @@
+---
+title: Tree data structure using ActiveRecord
+date: 2018-12-23 20:47:18
+excerpt: Approaches to introducde hierarchy into your models
+type: post
+blog: true
+tags:
+    - rails
+    - postgres
+    - sql
+    - data structures
+    - active record
+---
+
 # Modelling tree data structure in ActiveRecord
 
 ## Problem Statement
