@@ -30,10 +30,16 @@ tags:
 * Complexity is more apparent to readers :) 
 
 **Symptoms of complexity**
+
 * Change amplification - huge change radius for a visible small change.
 * Cognitive Load - How much information do I need to know to complete a task. Too much information increases the chances of missing out on something crucial and hence bugs crop up. eg. global variables, API's with destructive side effects.
 * Unknown Unknowns - not sure which piece of code to change for completing a task. This is a factor for every person who's new to the team
 
+
 * One of the most import design goals is to make the system ***obvious***. Obvious systems reduce onboarding thereby reducing time, effort and money
 
 **Causes of complexity**
+Complexity is caused by two things - ***dependencies and obscurity***
+
+A dependency exist if a given piece of code cannot be understood in isolation
+
