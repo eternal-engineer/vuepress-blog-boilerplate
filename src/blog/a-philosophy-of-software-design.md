@@ -1,7 +1,7 @@
 ---
-title: A philosophy of software design - Chapter one notes
-date: 2020-03-22 19:10:18
-excerpt: Chapter one notes
+title: A philosophy of software design
+date: 2020-03-22 00:00:00
+excerpt: Chapter notes
 type: post
 blog: true
 tags:
@@ -17,4 +17,4 @@ tags:
 * Good designs are complexity reducers. They keep the complexity level in check.
 * Two approaches to fight complexity
     * Eliminate complexity - remove special cases, consistent styling, etc.
-    * Encapsulate complexity - 
+    * Encapsulate complexity - so that we can work on a system without dealing with it's complexity
