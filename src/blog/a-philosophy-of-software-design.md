@@ -23,7 +23,17 @@ tags:
 * The question to ask while making a design change is: Is the software less or more complex? Complexity is a very good measure of design. 
 
 
-*meta*
+## Chapter Two - The nature of complexity
 
-*  waterfall couldn't incorporate execution time design decision because people who made design choices may have moved on to something else
-* In agile, the initial design focuses on implementing a subset of the functionality. Then we revisit our choices, make fixes and make some more changes. 
+* Complexity is **anything** related to the **structure** of a software system that makes it hard to **understand and modify**
+* Complexity is a point in time measure of the **piece** of code we are trying to understand or modify. for example, if a complex system is rarely used and doesn't need to be understood, it adds little value to the overall complexity
+* Complexity is more apparent to readers :) 
+
+**Symptoms of complexity**
+* Change amplification - huge change radius for a visible small change.
+* Cognitive Load - How much information do I need to know to complete a task. Too much information increases the chances of missing out on something crucial and hence bugs crop up. eg. global variables, API's with destructive side effects.
+* Unknown Unknowns - not sure which piece of code to change for completing a task. This is a factor for every person who's new to the team
+
+* One of the most import design goals is to make the system ***obvious***. Obvious systems reduce onboarding thereby reducing time, effort and money
+
+**Causes of complexity**
