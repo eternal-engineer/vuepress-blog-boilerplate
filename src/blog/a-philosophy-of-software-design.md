@@ -39,7 +39,18 @@ tags:
 * One of the most import design goals is to make the system ***obvious***. Obvious systems reduce onboarding thereby reducing time, effort and money
 
 **Causes of complexity**
+
 Complexity is caused by two things - ***dependencies and obscurity***
 
-A dependency exist if a given piece of code cannot be understood in isolation
+**Dependencies**
+
+* A *dependency* exist if a given piece of code cannot be understood in isolation.
+* Too many dependencies lead to cascading changes which are harder to test and causes more bugs. Huge change amplification also causes high cognitive load
+
+**Obscurity** 
+
+* means unknowns. it happens when the important information is not obvious. for example, a variable with a very generic name that doesn't carry much useful information. example, time, date, etc.
+* Hidden dependencies are also obscurities. Obscurities causes unknown unknowns
+
+
 
