@@ -53,4 +53,17 @@ Complexity is caused by two things - ***dependencies and obscurity***
 * Hidden dependencies are also obscurities. Obscurities causes unknown unknowns
 
 
+## Chapter Three - Tactical vs Strategic Programming
+
+**Tactical Programming**
+
+* short sighted
+* increases complexity - introduces special cases, dependencies and obscurities one change at a time
+* the current tactical implementation makes future tactical implementations harder. **Complexity is incrememntal!**
+
+**Strategic Programming**
+
+* *Most of the code in any system is written by extending the current system. Our jobs as system designers is to facilitate this*. 
+* strategic programming is not to invest all the time upfront in design. Every change that goes through should improve the design or atleast not detoriate
+
 
