@@ -1,13 +1,13 @@
 ---
 title: My Principles of money
-date: 2020-03-22 00:00:00
+date: 2020-03-25 00:00:00
 excerpt: self notes on how I spend / want to spend my money
 type: post
 blog: true
 tags:
     - money
     - notes
-    - self help
+    - self-help
 ---
 
 ## My Principles of Money
