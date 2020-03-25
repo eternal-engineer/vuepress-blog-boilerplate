@@ -66,4 +66,45 @@ Complexity is caused by two things - ***dependencies and obscurity***
 * *Most of the code in any system is written by extending the current system. Our jobs as system designers is to facilitate this*. 
 * strategic programming is not to invest all the time upfront in design. Every change that goes through should improve the design or atleast not detoriate
 
+## Chapter Four - Modules should be deep
+
+**Modular Design** - design systems so that developers face only a fraction of the overall complexity at any given time
+
+* Modules can take many forms - classes, subclasses, services, etc.
+* The goal of modular design is to keep the dependencies between them minimal
+* Understanding modules - Interface and Implementation. Interface is the *what* and Implementation is the *how*
+
+Note:
+A developer should not need to understand the implementations of modules. This also means that implementation should have minimal side effects. Side effects reduces readability and loosens the interface
+
+**Interfaces**
+
+Interface is the guide on how to use a module. The guide can be classified into two types - formal and informal. 
+
+* Formal information are the method signatures and return types/values. They are checked and verified by the programming language. Either at run time or at compile time. 
+* informal information is the information the developer needs to know in order to use the module appropriately. e.g. types of files allowed, number of files allowed, etc.
+
+**Abstractions**
+
+Abstraction is the simplified view of an identity. Interfaces are just abstractions. 
+
+Simplification is tricky. You could add a lot of information but that results into increased cognitive load. Or, in order to give out less information, we might end up hiding something important to build a model of the entity. 
+
+An abstraction that omits important details is a **false abstraction**
+
+**Deep Modules**
+
+powerful yet simple modules
+
+A module might not have an interface at all. e.g. garbage collectors. Garbage collectors reduce the cognitive load of freeing up memory
+
+**Shallow Modules**
+
+one whose interface is complicated relative to the functionality it provides
+
+
+*Providing choice is good, but interfaces should be designed to keep the common case as simple as possible*
+
+*If an interface has many features, but most developers only need to be aware of a few of them, the effective complexity of that interface is just the complexity of the commonly used features.
+
 
