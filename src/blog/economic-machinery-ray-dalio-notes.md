@@ -1,6 +1,6 @@
 ---
 title: Working of the economic machinery
-date: 2020-03-22 00:00:00
+date: 2020-03-28 00:00:00
 excerpt: Notes from Ray Dalio - How The Economic Machine Works (https://www.youtube.com/watch?v=PHe0bXAIuk0)
 type: post
 blog: true
@@ -10,7 +10,7 @@ tags:
     - youtube
 ---
 
-# Economic Machinery
+## Economic Machinery
 
 Three main forces that drive the economy
 
