@@ -107,4 +107,31 @@ one whose interface is complicated relative to the functionality it provides
 
 *If an interface has many features, but most developers only need to be aware of a few of them, the effective complexity of that interface is just the complexity of the commonly used features.
 
+## Chapter Five - Information Hiding (and Leakage)
+
+- Information hiding is a way of achieving deep modules
+- Information hiding helps in two ways
+  - simplifies the interface into a more abstract view
+  - makes it easier to evolve the system
+- private variables with getters is not information hiding. The information should be completely unknown and irrelevant to the module user
+
+### Information Leakage
+
+If a piece of information is reflected in the interface for a module, then by definition it has been leaked
+
+**Back Door Leakage**
+
+Two or modules depend on a third common shared entity
+
+_example_: A module for writing file and a module for reading files depend on the type of file system. If file system were to change, both the modules will need to change. Although both system hid the information but both will need to change if the file system changes. Hence, the file system is not abstracted out clearly by either modules
+
+**On Large classes**
+
+- Information Hiding can often be improved by making a class slightly longer
+- A larger class also allows us to raise the level of interface. Since it has a lot of information to operate on, it can club it and provide it as a single view.
+
+**Information hiding within a class**
+
+- Design the private methods within a class so that each encapsulates some information or capability and hides it from the rest of the class
+- Try to minimize the number of places where each instance variable is used. Instance variables are shared across methods and hence increase dependency
 
