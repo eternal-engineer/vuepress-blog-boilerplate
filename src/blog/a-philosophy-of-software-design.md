@@ -135,3 +135,41 @@ _example_: A module for writing file and a module for reading files depend on th
 - Design the private methods within a class so that each encapsulates some information or capability and hides it from the rest of the class
 - Try to minimize the number of places where each instance variable is used. Instance variables are shared across methods and hence increase dependency
 
+## Chapter Six - General Purpose Modules are Deeper
+
+- One of the goals in class design is to allow each class to be developed independently.
+- API's should be general purpose. Usage can be specific
+- General purpose interface reduces cognitive load
+- _General purpose API doesn't mean an API doing too many things_
+
+## Chapter Seven - Different Layer, Different Abstractions
+
+**Pass through methods**
+
+- are a smell. They represent poor class decomposition
+- makes class shallower
+- interface duplication is violation of SRP
+
+**Decorators**
+
+- A decorator object takes an existing object and extends its functioanlity. It provides an API similar or identical to the underlying object and it's methods invoke the methods of the underlying object
+- The motivation for a decorator is to separate special purpose extensions of a class from a more generic core
+- _decorators very rarely make sense and there is usually a better alternative_
+
+**Interface vs Implementation**
+
+- if the representation used internally is similar to the abstractions that appear in the interface, then the class is shallow.
+
+**Pass through variables**
+
+A variable that is passed down through a long chain of methods.
+
+- They add complexity because they force all of the intermediate methods to be aware of their existence, even though the methods have no use of it themselves other than passing it down.
+- There are multiple ways of eliminating pass through variables
+  - shared objects between layers. not good enough to merit it's own existence
+  - global objects. no race conditions please!. Never
+  - using **context** to hold application's global state. Pass context along. Golang philosophy
+    - How to not make context a pass through var? - pass it during object construction
+    - If a new variable needs to be added, it can be added to the context
+    - Contexts are not necessarily thread safe. The best possible way is to make variables/objects in context to be thread safe.
+
