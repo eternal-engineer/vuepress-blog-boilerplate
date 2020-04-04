@@ -171,5 +171,5 @@ A variable that is passed down through a long chain of methods.
   - using **context** to hold application's global state. Pass context along. Golang philosophy
     - How to not make context a pass through var? - pass it during object construction
     - If a new variable needs to be added, it can be added to the context
-    - Contexts are not necessarily thread safe. The best possible way is to make variables/objects in context to be thread safe.
+    - Contexts are not necessarily thread safe. The best possible way is to make variables/objects in context to be immutable
 
