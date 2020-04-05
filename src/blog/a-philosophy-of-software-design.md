@@ -173,3 +173,61 @@ A variable that is passed down through a long chain of methods.
     - If a new variable needs to be added, it can be added to the context
     - Contexts are not necessarily thread safe. The best possible way is to make variables/objects in context to be immutable
 
+## Chapter Eight - Pull Complexity Downwards
+
+_Nothing worthy of noting here_
+
+## Chapter Nine - Better together or better apart
+
+_Given two pieces of functionality, should they be implemented in the same place, or should their implementations be separated_
+
+- large number of simpler components does not necessarily mean a better system. It is hard to keep track of all those components and even harder to find which one to use when the need arises
+  - poor subdivision might even result into dependencies and duplication
+
+**Bringing Together**
+
+- bring together if the information is shared
+- bring together if it will result into a better interface
+- bring together to eliminate duplication
+  - shared information is not necessarily repitition. A piece of information might be split but not repeated. We need to handle both cases
+
+**Conjoined Methods**
+it should be possible to understand each method independently. if you can't understand the implementation of one method without understand the implementation of the other, it's a red flag.
+
+## Chapter Ten - Define errors out of existence
+
+_Exception handling is one of the worst sources of complexity in software systems_
+
+TLDR: exceptions happen because of special cases. There are not many good ways of handling exceptions. We should just strive to reduce them. In many cases, the semantics of operations can be modified so that the normal behavior handles all situations and there is no exceptional condition to report.
+
+**Handling Exceptions**
+
+- move forward and complete the execution in spite of the exception
+- halt the execution and report the exception upwards
+  - _aborting can be complicated because at the time of abort the system might have been in an incosistent state_
+- Exception can occurs while handling exceptions :facepalm
+- Exception handling is really hard to test because by definitions these are exceptions and hard to reproduce in a test environment
+- since exception occurs very rarely, a large amount of production is never run. so the reliability of that code is always in execution.
+- **The execeptions thrown by the class are a part of it's interace**
+- classes with a lot of exceptions are complex that the ones with fewer and are shallower
+
+### Reducing the number of exceptions
+
+**Define errors out of existence**
+
+- fail as less as possible. For example, idemptotent API's for creating resources, code to delete API's shouldn't throw an error if the file doesen't exist.
+
+**Exception Masking**
+
+- Handle exception where it occurs. Very often the upper layers are rarely aware of the downstream exception. Methods such as retries, eventual consistency helps.
+
+**Exception Aggregation**
+
+- The idea behind exception aggregation is to handle many exeptions with a single piece of code; rather than writing distinct handlers for many individual exceptions, handle them all in one place with a single handler
+
+* if a system processes a series of requests, it's useful to define an exception that aborts the current request, cleans up the systems state, and continue with the next request. The exception is caught in a single place near the top of the system's request handling loop
+* This exception can be thrown at any time in the processing of the request to abort the request. Different subclasses of this excpetion can be defined for different conditions.
+
+* Exception aggregation works best if an exception propagates several layers up the stack before being handled. This allows more exceptions from more methods to be handled in the same place.
+
+* Exception aggregation replaces several special-purpose mechanisms, each tailored for a particular situation, with a single general-purpose mechanism that can handle multiple situations
